@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        主页内容？
+        主页内容？123
       </div>
     );
   }
