@@ -1,0 +1,19 @@
+.my-accordion .pad .am-accordion-content-box {
+    padding: 10px;
+}
+
+.am-search {
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-title {
+    color: #888;
+    font-size: 14px;
+    padding: 30px 0 18px 0;
+}
+
+.space-carousel {
+    padding: 16px;
+    background: #DEF1E5;
+    overflow: hidden;
+  }
