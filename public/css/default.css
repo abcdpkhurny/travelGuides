@@ -1,0 +1,28 @@
+/* 位移 */
+.fixedBottom{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    z-index: 500;
+}
+
+/* antd-mobile 配套样式 */
+.my-accordion .pad .am-accordion-content-box {
+    padding: 10px;
+}
+
+.am-search {
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-title {
+    color: #888;
+    font-size: 14px;
+    padding: 30px 0 18px 0;
+}
+
+.space-carousel {
+    padding: 16px;
+    overflow: hidden;
+  }
