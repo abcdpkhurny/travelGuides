@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Accordion, List } from 'antd-mobile';
-
+import Header from '../shared/Header'
 class Discover extends Component {
     onChange = (key) => {
         console.log(key);
     }
     render() {
       return (
+        <div>
+          <Header title="查找景点"/>
         <div style={{ marginTop: 10, marginBottom: 10 }}>
         <Accordion accordion openAnimation={{}} className="my-accordion" onChange={this.onChange}>
           <Accordion.Panel header="Title 1">
@@ -21,6 +23,7 @@ class Discover extends Component {
             text text text text text text text text text text text text text text text
           </Accordion.Panel>
         </Accordion>
+      </div>
       </div>
       );
     }

@@ -28,7 +28,7 @@ class Header extends Component {
         <div>
             <SearchBar
                 value={this.state.value}
-                placeholder="查找景点"
+                placeholder={this.props.title}
                 onSubmit={this.searchScenic}
                 onCancel={this.searchScenic}
                 onChange={(e) => this.onChange(e)}

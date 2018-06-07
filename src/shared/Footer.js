@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { Icon, Grid } from 'antd-mobile';
+import { Grid } from 'antd-mobile';
 import {withRouter} from 'react-router-dom';
 
-const list=[
-  {id:"1",item:"check-circle", name:"推荐",to:"/"},
-  {id:"2",item:"check", name:"发现",to:"/discover"},
-  {id:"3",item:"check-circle-o", name:"社区",to:"/"},
-  {id:"4",item:"cross-circle", name:"个人",to:"/"}
-];
-
-const data = list.map(data => ({
-  icon: (<Icon listto={data.to} key={data.id} type={data.item} size="sm"/>),
-  text: data.name,
-}));
+const data=[
+  {icon: (<i key="1" listto="/" className="iconfont"><span style={{fontSize:20}}>&#xe6b2;</span></i>),text: "推荐"},
+  {icon: (<i key="2" listto="/discover" className="iconfont"><span style={{fontSize:20}}>&#xe690;</span></i>),text: "发现"},
+  {icon: (<i key="3" listto="/community" className="iconfont"><span style={{fontSize:20}}>&#xe657;</span></i>),text: "社区"},
+  {icon: (<i key="4" listto="/theme" className="iconfont"><span style={{fontSize:20}}>&#xe69c;</span></i>),text: "个人"}
+]
 
 class Footer extends Component {
 
@@ -22,9 +17,12 @@ class Footer extends Component {
   
     render() {
       return (
+        <div>
+        <div className="footerBottom"></div>
         <div className="fixedBottom">
            <Grid data={data} square={false} columnNum={4} hasLine={false} activeStyle={false} 
            onClick={(e)=>this.linttoPath(e)}/> 
+        </div>
         </div>
       );
     }
