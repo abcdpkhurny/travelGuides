@@ -1,0 +1,569 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 100%;
+}
+.headerTop{
+    height: 55px;
+    display: flex;
+    justify-content:flex-end;
+    background-color: #02bad8;
+    color: #ffffff;
+}
+.headerTitle{
+    flex: 2;
+    display: flex;
+    justify-content:flex-end;
+    line-height: 55px;
+    font-size: 24px;
+    margin-left: 60px;
+}
+.headerLogin{
+    flex: 2;
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 15px;
+    padding-top:16px;
+    font-size: 26px;
+}
+.contentTop{
+    display: flex;
+    padding: 35px 0px;
+    align-items:center;
+}
+.contentImg img{
+    width: 100%;
+    height: 100px;
+    border-radius: 50%;
+}
+.contentImg{
+    width: 25%;
+    margin:0 10px ;
+}
+.contentUserName{
+    line-height: 40px;
+    margin-left:20px ;
+    flex: 2;
+}
+.userName{
+    font-size: 22px;
+}
+.userNum{
+    color:#525252 ;
+}
+.userNumW{
+    margin-right: 25px;
+}
+.content-rightimg{
+    color: #b6b6b6;
+}
+.contentNumDer{
+    display: flex;
+    padding: 35px 20px;
+    align-items:center;
+    justify-content:space-between;
+    line-height: 30px;
+}
+.contentLogin{
+    border: 1px solid #ffffff;
+    padding:16px 30px;
+    background-color: #45ddf1;
+    color: #ffffff;
+    margin: 0 auto;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.contentNumDer p:nth-last-child(1){
+    text-align: center;
+}
+.clock{
+    border: 2px solid red;
+    padding: 8px 16px;
+    border-radius:40% ;
+    font-size: 20px;
+    color: red;
+}
+.myNews{
+    display: flex;
+    justify-content:space-between;
+    padding: 25px 20px;
+}
+.myTitle{
+    font-size: 22px;
+}
+.big-cut-off{
+    border:6px solid #f2e8e1;
+}
+.small-cut-off{
+    border-bottom:2px solid #ece2db;
+}
+.footer-per{
+    display: flex;
+    line-height: 26px;
+    padding: 20px 0px;
+    justify-content:space-around;
+}
+.color-son{
+    color:#FF4254
+}
+.myNews .fa-star-o{
+    color: #ffda00;
+}
+
+
+/*个人页面头部*/
+
+/*登录注册页面*/
+input.loginNameField,input.loginPasswordField {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-weight:bold;
+    border-bottom: 1px solid #424242;
+    border:none;
+    background-color: #ffffff;
+}
+
+.loginButtonsWrapper {
+    height: 36px;
+    padding-top: 4px;
+}
+input.loginButton {
+    height: 40px;
+    width: 100%;
+    background-color: #45ddf1;
+    text-decoration: none;
+    line-height: 40px;
+    float: right;
+    margin:10px 0px;
+    color: #f2e8e1;
+    font-size: 22px;
+    padding:0 20px;
+    border-radius: 2px;
+    border:1px solid #ebe1da;
+}
+.loginRegisterButton {
+    float: left;
+    margin-right: 12px;
+    padding-right: 12px;
+    border-right: 2px dotted #e9e9e9;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 6px;
+    color: #000000;
+}
+.formFieldWrapper{
+    margin-bottom: 20px;
+}
+.loginRecoverButton {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    color: #000000;
+}
+.content-log{
+    width: 100%;
+}
+.content-login{
+    /*background-color: rgba(37, 186, 181, 0.50);*/
+    padding: 10px 20px 0px 20px;
+    color: #000000;
+    height: 100%;
+    margin:30px 0px 20px 0px;
+}
+input::-webkit-input-placeholder {
+    color: #9f9f9f;
+}
+
+.denglu{
+    font-weight:bold;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.Login-err{
+    margin-bottom: 20px;
+    color: red;
+}
+
+/*个人页面*/
+
+.headerla{
+    margin-left: 15px;
+    padding-top:10px;
+    font-size: 26px;
+}
+.headerla .fa-angle-left{
+    color: #ffffff;
+}
+.myNews span{
+    margin: 0px 0px 0px 30px;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+.myTitle img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #eeeeee;
+}
+
+/*修改昵称信息、电话*/
+.content-perList {
+    margin:30px 0px;
+}
+.content-item input{
+    width: 73%;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    background-color: #ffffff2f;
+}
+.content-item{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.foo-menu {
+    position: relative;
+    z-index: 1000 !important;
+  }
+  
+  .menu-active .top-nav-bar{
+    z-index: 80;
+  }
+  
+  .top-nav-bar {
+    position: relative;
+    background-color: #008AE6;
+    color: #FFF;
+  }
+  .menu-mask {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 79;
+  }
+
+  /* 发现景点页面 */
+  .discover{
+    padding: 2% 0% 0% 3% ;
+    font-size: 14px;
+}
+.dis-Img{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+.discover dl{
+    width: 46%;
+    display: block;
+    margin:0% 3% 0% 0%;
+}
+.discover img{
+    width: 100%;
+    border-radius:20px 10px;
+    padding: 2px;
+    border: 3px solid #dfdfdf;
+}
+.dis-title{
+    font-size: 18px;
+    border-left: 7px solid #45ddf1;
+    padding-left: 2%;
+}
+.dis-context{
+    line-height: 22px;
+    color: #888888;
+    margin: 4% 8% 3% 4%;
+}
+.discover dd{
+    position: relative;
+    top: -20%;
+}
+.xd-bott{
+   
+    color: #9f9f9f;
+}
+.xd-top{
+    background-color: rgba(225, 225, 225, 0.60);
+    color: #292929;
+    border-radius:40px;
+}
+
+/* 景点详细 */
+.detaTopImg img{
+    width: 100%;
+}
+.deta-Eye{
+    background-color: rgba(0, 0, 0, 0.30);
+    border-radius: 26px;
+    padding: 3px 6px;
+}
+.detaImgText{
+    position: relative;
+    top: -40px;
+    color: #ffffff;
+    display: flex;
+    justify-content:space-between;
+    font-size: 18px;
+    background: -webkit-linear-gradient(#ffffff, #000000); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#ffffff, #000000); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#ffffff, #000000); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#ffffff, #000000); /* 标准的语法 */
+    padding: 10px 5px;
+}
+.detaImgText p{
+    font-size: 20px;
+}
+
+.detaContext{
+    margin: 2% 0% 2% 3%;
+    font-size: 14px;
+}
+
+.write-pinglun{
+    display: flex;
+    justify-content:space-around;
+    padding: 8px 10px;
+    background-color: rgba(212, 212, 212, 0.30);
+    box-shadow: 6px 6px 5px #888888;
+    margin-bottom: 2%;
+}
+.renpinglun{
+    margin-top:5%;
+}
+
+.renpinglun img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+}
+
+.pingluntext{
+    margin:4% 0% 5% 0%;
+}
+.pinglunName span{
+    position: relative;
+    top: -25px;
+    margin-left: 20px;
+    color: #cf821d;
+}
+.wenzhi{
+    margin:2% 0% 4% 6%;
+}
+.pinglunTime{
+    color: #9f9f9f;
+    margin:4% 0% 4% 0%;
+    font-size: 13px;
+}
+.pinglunTime span{
+    margin-left: 15%;
+    padding: 4px 12px;
+    background-color: rgba(212, 212, 212, 0.30);
+    border-radius: 20px;
+}
+.huifuRen{
+    border-left: 4px solid #02e2ff;
+    padding-left:2% ;
+    margin:2% 0% 2% 2%;
+    color: #cf821d;
+}
+.pinglunhuifu{
+    margin:2% 0% 2% 2%;
+    background-color: rgba(212, 212, 212, 0.20);
+    padding:2% 0% 3% 2%;
+
+}
+.dis-title span{
+    color:#02e2ff;
+}
+
+
+/* 发表弹框 */
+.text-fabiao{
+    width: 95%;
+    border: 1px solid#d0d0d0;
+    margin:2% 5% 0% 2%;
+    height: 100px;
+    border-radius: 6px;
+}
+
+/*论坛*/
+.forum-fx{
+    border-top: 1px solid #e4e4e4;
+    padding:4% 0%;
+}
+.forum-Name img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+}
+.forum-Name{
+    display: flex;
+    margin:0% 0% 2% 5%;
+
+
+}
+.forum-Name .Username{
+    flex:3;
+    color: #cf821d;
+    margin-left:2%;
+}
+.UserTime{
+    flex:1;
+    color: #9f9f9f;
+}
+.forum-neirong{
+    margin-left: 10%;
+}
+.forum-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 2%;
+}
+.forum-biaoqian,.forum-wenzi{
+    display: flex;
+    justify-content: space-between;
+    padding-right:2% ;
+}
+.forum-biaoqian .fa-thumbs-up{
+    color: #ff0003;
+}
+.forum-biaoqian .fa-star{
+    color: #ffda00;
+}
+.forum-biaoqian .fa-commenting{
+    color: #32b485;
+}
+.forum-title{
+    margin-bottom: 4%;
+}
+
+/*论坛详细*/
+
+.for-header{
+    margin-left: 4%;
+}
+
+.forum-wenzi{
+    color: #9b9b9b;
+    font-size: 13px
+}
+.for-plNum{
+    background-color: #e0e0e0;
+    padding:2% 0% 1% 4% ;
+    border-top: 1px solid #9b9b9b;
+    border-bottom: 1px solid #9b9b9b;
+    margin-top: 2%;
+}
+
+.for-content{
+    margin: 4% 0%;
+    padding-right: 2%;
+}
+.for-title{
+    margin-top: 4%;
+    font-weight: bold;
+}
+
+/* 插件菜单栏 */
+.single-foo-menu {
+    position: absolute;
+    z-index: 90 !important;
+    width: 100%;
+  }
+  
+  .single-menu-active .single-top-nav-bar{
+    z-index: 90;
+  }
+  
+  .single-top-nav-bar {
+    position: relative;
+    background-color: #008AE6;
+    color: #FFF;
+  }
+  .am-navbar-title {
+    color: #FFF!important;
+  }
+  .menu-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 89;
+  }
+
+/* 我的收藏 */
+
+.collect-fx{
+    display: flex;
+    background-color: #ffffff;
+    padding: 1%;
+}
+.collect-Img{
+    width: 60%;
+}
+.collect-Img img{
+    width: 80%;
+    border: 2px solid #dfdfdf;
+    border-radius: 10px;
+}
+.collect-Name{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 4%;
+}
+.collect-text{
+    width: 40%;
+    padding: 4% 0%;
+}
+.collect-add span{
+    color: #9f9f9f;
+    padding-right: 4%;
+    margin-right: 4%;
+}
+.collect-add .didian{
+    border-right: 1px solid silver;
+}
+
+/* 分页 */
+.pagination-container {
+    margin: 10px 15px;
+  }
+  .custom-pagination-with-icon .am-pagination-wrap-btn-prev .am-button-inline{
+    padding-left: 0;
+    padding-right: 10px;
+  }
+  .custom-pagination-with-icon .am-pagination-wrap-btn-next .am-button-inline{
+    padding-left: 10px;
+    padding-right: 0;
+  }
+  .arrow-align {
+    display: flex;
+    align-items: center;
+  }
+  .sub-title {
+    color: #888;
+    font-size: 14px;
+    padding: 30px 0 18px 0;
+  }
+
+  .am-navbar-light{
+    background-color:#cf821d;
+  }
