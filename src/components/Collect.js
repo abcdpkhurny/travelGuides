@@ -8,7 +8,7 @@ export default class Collect extends Component {
                     <a href="">
                         <div className="collect-fx">
                             <div className="collect-Img">
-                                <img src="static/images/tourism/maerdaifu01.jpg"/>
+                                <img src="static/images/tourism/maerdaifu01.jpg" alt=""/>
                             </div>
                             <div className="collect-text">
                                 <div className="collect-Name">马尔代夫</div>
@@ -20,7 +20,7 @@ export default class Collect extends Component {
                     <a href="">
                         <div className="collect-fx">
                             <div className="collect-Img">
-                                <img src="static/images/tourism/maerdaifu01.jpg"/>  
+                                <img src="static/images/tourism/maerdaifu01.jpg" alt=""/>  
                             </div>
                             <div className="collect-text">
                                 <div className="collect-Name">马尔代夫</div>
@@ -31,7 +31,7 @@ export default class Collect extends Component {
                     </a><a href="">
                     <div className="collect-fx">
                         <div className="collect-Img">
-                            <img src="static/images/tourism/maerdaifu01.jpg"/>
+                            <img src="static/images/tourism/maerdaifu01.jpg" alt=""/>
                         </div>
                         <div className="collect-text">
                             <div className="collect-Name">马尔代夫</div>

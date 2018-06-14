@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, List, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import { Modal, List, Button, WhiteSpace } from 'antd-mobile';
 import {Link} from 'react-router-dom';
 
 
@@ -71,7 +71,7 @@ export default class ForumList extends Component {
                     </div>
                     <div className="pinglunQu">
                         <div className="renpinglun">
-                            <div className="pinglunName"><img src="static/images/tourism/01.jpg"/> <span>啥子么？</span></div>
+                            <div className="pinglunName"><img src="static/images/tourism/01.jpg" alt=""/> <span>啥子么？</span></div>
                             <div className="wenzhi">
                                 <div className="pingluntext">世界上好看的人多了去了</div>
                                 <div className="pinglunTime">今天12:14 <span onClick={this.showModal('modal2')} className="huifuanniu">回复</span></div>
@@ -89,7 +89,7 @@ export default class ForumList extends Component {
                         </div>
 
                         <div className="renpinglun">
-                            <div className="pinglunName"><img src="static/images/tourism/01.jpg"/> <span>啥子么？</span></div>
+                            <div className="pinglunName"><img src="static/images/tourism/01.jpg" alt=""/> <span>啥子么？</span></div>
                             <div className="wenzhi">
                                 <div className="pingluntext">世界上好看的人多了去了</div>
                                 <div className="pinglunTime">今天12:14 <span onClick={this.showModal('modal2')} className="huifuanniu">回复</span></div>
@@ -106,7 +106,7 @@ export default class ForumList extends Component {
                             </div>
                         </div>
                         <div className="renpinglun">
-                            <div className="pinglunName"><img src="static/images/tourism/01.jpg"/>  <span>啥子么？</span></div>
+                            <div className="pinglunName"><img src="static/images/tourism/01.jpg" alt=""/>  <span>啥子么？</span></div>
                             <div className="wenzhi">
                                 <div className="pingluntext">世界上好看的人多了去了</div>
                                 <div className="pinglunTime">今天12:14 <span className="huifuanniu">回复</span></div>

@@ -4,22 +4,17 @@ import Header from '../shared/Header'
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
 import { Pagination, Icon } from 'antd-mobile';
 
-const locale = {
-  prevText: 'Prev',
-  nextText: 'Next',
-};
 const data = [
   {
     value: '1',
-    label: 'Food',
+    label: '全部',
   }, {
     value: '2',
-    label: 'Supermarket',
+    label: '我的收藏',
   },
   {
     value: '3',
-    label: 'Extra',
-    isLeaf: true,
+    label: '我的主题',
   },
 ];
 
@@ -29,6 +24,8 @@ class Community extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
+      navBarTitle:"全部",
+      menuValue:1,
       initData: '',
       show: false,
     };
@@ -47,14 +44,17 @@ class Community extends Component {
         }
       }
     });
-    console.log(label);
+    this.setState({
+      show: !this.state.show,
+      navBarTitle:label,
+      menuValue:value,
+    });
   }
   handleClick = (e) => {
-    e.preventDefault(); // Fix event propagation on Android
+    e.preventDefault(); 
     this.setState({
       show: !this.state.show,
     });
-    // mock for async data loading
     if (!this.state.initData) {
       setTimeout(() => {
         this.setState({
@@ -76,7 +76,7 @@ class Community extends Component {
         <Menu
           className="single-foo-menu"
           data={initData}
-          value={['1']}
+          value={"["+this.state.menuValue+"]"}
           level={1}
           onChange={this.onChange}
           height={document.documentElement.clientHeight * 0.6}
@@ -89,12 +89,11 @@ class Community extends Component {
       );
         return(
                 <div className="forumLunT">
-                <Header title="查找主题"/>
-        
+                <Header title="查找主题" select="主题"/>
                 <div className={show ? 'single-menu-active' : ''}>
                     <div>
                         <NavBar
-                        leftContent="全部"
+                        leftContent={this.state.navBarTitle}
                         mode="light"
                         onLeftClick={this.handleClick}
                         className="single-top-nav-bar"
@@ -107,23 +106,9 @@ class Community extends Component {
                 </div>
                 <div className="forum-content">
                     <div className="forum-fx">
-                        <div className="forum-Name"><img src="static/images/tourism/01.jpg"/> <span className="Username">啥子么    f ？</span><span className="UserTime">7天前更新</span></div>
+                        <div className="forum-Name"><img src="static/images/tourism/01.jpg" alt=""/> <span className="Username">啥子么    f ？</span><span className="UserTime">7天前更新</span></div>
                         <div className="forum-neirong">
                             <div className="forum-title"><a href="/ForumList"> 论坛标题 论坛标题 论坛标题 论坛标题</a></div>
-                            <div className="forum-biaoqian"><span> <i className="fa fa-thumbs-up" aria-hidden="true"></i> 5555</span><span><i class="fa fa-star" aria-hidden="true"></i> 6666</span><span><i className="fa fa-commenting" aria-hidden="true"></i> 777</span></div>
-                        </div>
-                    </div>
-                    <div className="forum-fx">
-                        <div className="forum-Name"><img src="static/images/tourism/01.jpg"/> <span className="Username">啥子 dddd么？</span><span className="UserTime">7天前更新</span></div>
-                        <div className="forum-neirong">
-                            <div className="forum-title"><a href=""> 论论坛标题坛标题 论坛标题 论坛标题 论坛标题</a></div>
-                            <div className="forum-biaoqian"><span> <i className="fa fa-thumbs-up" aria-hidden="true"></i> 5555</span><span><i class="fa fa-star" aria-hidden="true"></i> 6666</span><span><i className="fa fa-commenting" aria-hidden="true"></i> 777</span></div>
-                        </div>
-                    </div>
-                    <div className="forum-fx">
-                        <div className="forum-Name"><img src="static/images/tourism/01.jpg"/> <span className="Username">啥子 dddd么？</span><span className="UserTime">7天前更新</span></div>
-                        <div className="forum-neirong">
-                            <div className="forum-title"><a href=""> 论论坛标题坛标题 论坛标题 论坛标题 论坛标题</a></div>
                             <div className="forum-biaoqian"><span> <i className="fa fa-thumbs-up" aria-hidden="true"></i> 5555</span><span><i class="fa fa-star" aria-hidden="true"></i> 6666</span><span><i className="fa fa-commenting" aria-hidden="true"></i> 777</span></div>
                         </div>
                     </div>

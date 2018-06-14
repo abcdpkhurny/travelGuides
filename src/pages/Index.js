@@ -1,24 +1,57 @@
 import React, { Component } from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
-import Header from '../shared/Header'
+import Header from '../shared/Header';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class Index extends Component {
-    state = {
-        data: ['1', '2', '3'],
-        imgHeight: 176,
-      }
-      componentDidMount() {
-        // simulate img loading
-        setTimeout(() => {
-          this.setState({
-            data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-          });
-        }, 100);
-    }
+  constructor(props){
+		super(props)
+		this.state={
+      newScenics:[],
+      likeScenics:[],
+      recommendScenics:[],
+      imgHeight: 176,
+		}
+	}
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+      });
+    }, 100);
+    this.loadScenics(this.props);
+  }
+  loadScenics=(props)=>{
+    axios.get("/api/scenic/scenicByEndTime")
+				.then(
+					resp=>this.setState({
+						newScenics:resp.data
+					})
+        )
+    axios.get("/api/scenic/scenicByLove")
+    .then(
+      resp=>this.setState({
+        likeScenics:resp.data
+      })
+    )
+    axios.get("/api/scenic/scenicByBrowse")
+    .then(
+      resp=>this.setState({
+        recommendScenics:resp.data
+      })
+    )
+  }
+  
+  componentWillReceiveProps(newProps){
+		
+  }
+  
+
     render() {
       return (
         <div>
-        <Header title="查找景点"/>
+        <Header title="查找景点" select="景点"/>
         <WingBlank>
         <Carousel className="space-carousel"
           frameOverflow="visible"
@@ -30,9 +63,10 @@ class Index extends Component {
           beforeChange={(from, to) => {}}
           afterChange={index => this.setState({ slideIndex: index })}
         >
-          {this.state.data.map((val, index) => (
-            <a
-              key={val}
+          {this.state.newScenics.map((val, index) => (
+            <Link 
+              to={"/detailed/"+val.id}
+              key={index}
               style={{
                 display: 'block',
                 position: 'relative',
@@ -42,16 +76,15 @@ class Index extends Component {
               }}
             >
               <img
-                src={"static/images/"+(index+1)+".jpg"}
-                alt=""
+                src={window.nginxUrl+"/images/"+val.path}
+                alt={val.itle}
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {
-                  // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
                   this.setState({ imgHeight: 'auto' });
                 }}
               />
-            </a>
+            </Link>
           ))}
         </Carousel>
       </WingBlank>
@@ -62,18 +95,20 @@ class Index extends Component {
             <span>|</span>
             <span>RECOMMEND</span>
           </div>
+          {this.state.likeScenics.map((val, index) => (
           <div className="scenic-recommend">
             <div>
-              <h3>旅游景点</h3>
-              <span>2012.1.1</span>
+              <h3>{val.title}</h3>
+              <span>{val.endTime}</span>
             </div>
-            <img src="static/images/1.jpg" alt=""/>
+            <img src={window.nginxUrl+"/images/"+val.path} alt={val.title} />
             <div className="scenic-user">
-              <img src="static/images/1.jpg" alt="" />
+              <img src={window.nginxUrl+"/user/"+val.path} alt="" />
               <p>哒哒哒哒</p>
-              <span>2020</span>
+              <span>{val.love}</span>
             </div>
           </div>
+          ))}
         </div>
         <div className="scenic-list">
           <div className="scenic-list-title">
@@ -82,28 +117,19 @@ class Index extends Component {
             <span>|</span>
             <span>LIKE</span>
           </div>
+          {this.state.likeScenics.map((val, index) => (
           <div className="scenic-like">
-            <img src="static/images/1.jpg" alt=""/>
+            <img src={window.nginxUrl+"/images/"+val.path} alt={val.title}/>
             <div>
-              <h3>旅游标题旅游标题旅游标题旅游标题旅游标题旅游标题..............</h3>
+              <h3>{val.title}</h3>
               <div>
                 <i key="1" className="iconfont"><span >&#xe6a3;</span></i>100万
                 <i key="2" className="iconfont"><span >&#xe6a2;</span></i>1002
-                <i key="3" className="iconfont"><span >&#xe6b0;</span></i>1000
+                <i key="3" className="iconfont"><span >&#xe6b0;</span></i>{val.love}
               </div>
             </div>
           </div>
-          <div className="scenic-like">
-            <img src="static/images/1.jpg" alt=""/>
-            <div>
-              <h3>旅游标题..............</h3>
-              <div>
-                <i key="1" className="iconfont"><span >&#xe6a3;</span></i>100万
-                <i key="2" className="iconfont"><span >&#xe6a2;</span></i>1002
-                <i key="3" className="iconfont"><span >&#xe6b0;</span></i>1000
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       );

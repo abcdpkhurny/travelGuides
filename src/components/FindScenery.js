@@ -1,114 +1,107 @@
 import React, { Component } from 'react';
-import { Tabs, WhiteSpace } from 'antd-mobile';
+import { Tabs, WhiteSpace,Pagination, Icon } from 'antd-mobile';
 import {Link} from 'react-router-dom';
-import { Pagination, Icon } from 'antd-mobile';
+import axios from 'axios';
+import Header from '../shared/Header';
 
-const locale = {
-  prevText: 'Prev',
-  nextText: 'Next',
-};
 export default class FindScenery extends Component {
+    constructor(props){
+		super(props)
+		this.state={
+            scenics:[],
+            citytabs:[],
+            tab:[],
+            page:1,
+            total:5,
+        }
+        
+    }
+    componentDidMount(){
+        this.loadCity();
+    }
+
+    loadCity=()=>{
+        axios.get("/api/city/list").then(resp=>this.loadCityTabs(resp.data))
+        this.loadTab(this.tab)
+    }
+
+    loadCityTabs=(item)=>{
+        let tab=[{key:0,title:"全部"}];
+        item.map(val=>tab.push({key:val.id,title:val.name}))
+        this.setState({
+            citytabs:tab
+        })
+    }
+    
+    loadTab=(e)=>{
+        let id=e?e.key:0;
+        axios.get("/api/city/"+id).then(resp=>this.setState({tab:resp.data}))
+        axios.get("/api/scenic/scenicByCityId?id="+id)
+        .then(resp=>
+                this.setState({
+                    scenics:resp.data.sceniclist
+                }))
+    }
+    
+    pageChange=(val)=>{
+        let id=this.state.tab?this.state.tab.id:0;
+        console.log(id);
+        if(this.state.total>this.state.page){
+            this.setState({
+                page:this.state.page+val
+            })
+        }
+        
+    }
+    
     renderContent = tab =>
     (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
               <div className="discover">
-
-                <div className="dis-summary">
+                <div className={this.state.tab.length===0?"hide":"dis-summary"}>
                     <div className="dis-title">精选</div>
                     <div className="dis-context">
-                        专门为你定制的旅游目的地 专门为你定制的旅游目的地
-                        专门为你定制的旅游目的地 专门为你定制的旅游目的地
-                        专门为你定制的旅游目的地 专门为你定制的旅游目的地
+                        {this.state.tab.content}
                     </div>
                 </div>
                 <div className="small-cut-off"></div>
             <div className="dis-Img">
-                
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu02.jpg"/> </Link></dt>
-                    <dd className="xd-top">景点名称</dd>
-                    <dd className="xd-top">景点简介</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-               
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu01.jpg"/> </Link></dt>
-                    <dd className="xd-top">红砖厂创意园</dd>
-                    <dd className="xd-top">创意、艺术的新领域</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu02.jpg"/> </Link></dt>
-                    <dd className="xd-top">景点名称</dd>
-                    <dd className="xd-top">景点简介</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-               
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu01.jpg"/> </Link></dt>
-                    <dd className="xd-top">红砖厂创意园</dd>
-                    <dd className="xd-top">创意、艺术的新领域</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu02.jpg"/> </Link></dt>
-                    <dd className="xd-top">景点名称</dd>
-                    <dd className="xd-top">景点简介</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-               
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu01.jpg"/> </Link></dt>
-                    <dd className="xd-top">红砖厂创意园</dd>
-                    <dd className="xd-top">创意、艺术的新领域</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu02.jpg"/> </Link></dt>
-                    <dd className="xd-top">景点名称</dd>
-                    <dd className="xd-top">景点简介</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
-               
-                <dl>
-                    <dt><Link to="/Detailed"><img src="static/images/tourism/maerdaifu01.jpg"/> </Link></dt>
-                    <dd className="xd-top">红砖厂创意园</dd>
-                    <dd className="xd-top">创意、艺术的新领域</dd>
-                    <dd className="xd-bott">更多精品 点击查看</dd>
-                </dl>
+                {this.state.scenics.map(val=>(
+                    <dl>
+                        <dt><Link to={"/detailed/"+val.id}><img src={window.nginxUrl+"/images/"+val.path} alt={val.name}/> </Link></dt>
+                        <dd className="xd-top">{val.name}</dd>
+                        <dd className="xd-top">{val.name}</dd>
+                        <dd className="xd-bott">{val.title}</dd>
+                    </dl>  
+                ))}
             </div>
             <div className="big-cut-off"></div>
             <div className="pagination-container" >
             
-            <Pagination total={5}
+            <Pagination total={this.state.total}
                 className="custom-pagination-with-icon"
-                current={1}
+                current={this.state.page}
                 locale={{
-                prevText: (<span className="arrow-align"><Icon type="left" />上一页</span>),
-                nextText: (<span className="arrow-align">下一页<Icon type="right" /></span>),
+                prevText: (<span className="arrow-align" onClick={()=>this.pageChange(-1)}><Icon type="left" />上一页</span>),
+                nextText: (<span className="arrow-align" onClick={()=>this.pageChange(1)}>下一页<Icon type="right" /></span>),
                 }}
             />
             </div>
         </div>
     </div>
     );
-
-    render() {const tabs = [
-        { title: '广州' },
-        { title: '珠海' },
-        { title: '深圳' },
-        { title: '佛山' },
-        { title: '清远' },
-        { title: '茂名' },
-        { title: '中山' },
-        { title: '江门' },
-        { title: '湛江' },
-        ];
+    
+    
+    render() {
         return (
             <div>
+                <Header title="查找景点" select="景点" />
                 <WhiteSpace />
-                <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}>
-                {this.renderContent}
+                <Tabs 
+                tabs={this.state.citytabs} 
+                onTabClick={this.loadTab}
+                renderTabBar={props => <Tabs.DefaultTabBar {...props} page={3} />}>
+                    {this.renderContent}
                 </Tabs>
                 <WhiteSpace />
             </div>

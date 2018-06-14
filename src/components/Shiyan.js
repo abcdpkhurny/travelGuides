@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import { Pagination, Icon } from 'antd-mobile';
 
-const locale = {
-  prevText: 'Prev',
-  nextText: 'Next',
-};
-
 export default class Shiyan extends Component {
   
- 
     render() {
 
         return (

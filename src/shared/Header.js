@@ -12,12 +12,16 @@ class Header extends Component {
 
     onChange= (value) => {
       this.setState({ value });
-      console.log(value);
+      //console.log(value);
     };
 
     searchScenic=(e)=>{
-      console.log(e)
-      this.props.history.push("/")
+      //console.log(e)
+      if(this.props.select==="主题"){
+        this.props.history.push("/")
+      }else{
+        this.props.history.push("/")
+      }
       this.setState({
         value: ''
       })
