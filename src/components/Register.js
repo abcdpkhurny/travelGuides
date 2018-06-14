@@ -4,6 +4,14 @@ export default class Register extends Component {
     render() {
         return (
             <div className="content-log">
+                <div className="header-per">
+                    <div className="headerTop">
+                        <div className="headerla"> <Link to="/personal"><i className="fa fa-angle-left fa-lg" aria-hidden="true"></i></Link></div>
+                        <div className="headerTitle">修改信息</div>
+                        <div className="headerLogin"></div>
+                    </div>
+                    <div className="small-cut-off"></div>
+                </div>
             <div className="content-login">
                 <form action="#" method="post" id="loginForm">
                     <fieldset>
@@ -28,7 +36,7 @@ export default class Register extends Component {
                         <div><input type="submit" value="注册" className="loginButton" id="loginButton"/></div>
                         <div className="loginButtonsWrapper">
                             <Link to="/login" className="loginRegisterButton">登录</Link>
-                            <a href="recover.html" className="loginRecoverButton">重置</a>
+                            <a href="/register" className="loginRecoverButton">重置</a>
                         </div>
                     </fieldset>
                 </form>

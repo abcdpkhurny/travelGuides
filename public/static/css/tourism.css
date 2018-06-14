@@ -31,8 +31,9 @@
 }
 .contentTop{
     display: flex;
-    padding: 35px 0px;
+    padding: 35px 4% 35px 0px;
     align-items:center;
+    
 }
 .contentImg img{
     width: 100%;
@@ -59,6 +60,7 @@
 }
 .content-rightimg{
     color: #b6b6b6;
+    margin-right: 2%;
 }
 .contentNumDer{
     display: flex;
@@ -66,6 +68,7 @@
     align-items:center;
     justify-content:space-between;
     line-height: 30px;
+    color: #888888;
 }
 .contentLogin{
     border: 1px solid #ffffff;
@@ -110,9 +113,6 @@
 .color-son{
     color:#FF4254
 }
-.myNews .fa-star-o{
-    color: #ffda00;
-}
 
 
 /*个人页面头部*/
@@ -143,7 +143,6 @@ input.loginButton {
     background-color: #45ddf1;
     text-decoration: none;
     line-height: 40px;
-    float: right;
     margin:10px 0px;
     color: #f2e8e1;
     font-size: 22px;
@@ -394,14 +393,6 @@ input::-webkit-input-placeholder {
 }
 
 
-/* 发表弹框 */
-.text-fabiao{
-    width: 95%;
-    border: 1px solid#d0d0d0;
-    margin:2% 5% 0% 2%;
-    height: 100px;
-    border-radius: 6px;
-}
 
 /*论坛*/
 .forum-fx{
@@ -441,7 +432,7 @@ input::-webkit-input-placeholder {
     justify-content: space-between;
     padding-right:2% ;
 }
-.forum-biaoqian .fa-thumbs-up{
+/* .forum-biaoqian .fa-thumbs-up{
     color: #ff0003;
 }
 .forum-biaoqian .fa-star{
@@ -449,9 +440,13 @@ input::-webkit-input-placeholder {
 }
 .forum-biaoqian .fa-commenting{
     color: #32b485;
-}
+} */
 .forum-title{
     margin-bottom: 4%;
+}
+
+.forum-biaoqian{
+    color: #b6b6b6;
 }
 
 /*论坛详细*/
@@ -566,4 +561,60 @@ input::-webkit-input-placeholder {
 
   .am-navbar-light{
     background-color:#cf821d;
+  }
+/* 发表弹框 */
+.text-fabiao{
+    width: 95%;
+    border: 1px solid#d0d0d0;
+    margin:2% 5% 0% 2%;
+    height: 100px;
+    border-radius: 6px;
+    color: #888;
+}
+/* 创建景点 */
+.shurukuang input{
+    width: 95%;
+    margin:2% 5% 2% 2%;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #d0d0d0;
+    color: #888;
+}
+.dis-dizhi{
+    width: 95%;
+    margin:2% 5% 2% 2%;
+}
+.am-wingblank{
+    margin-top:4%;
+}
+
+
+/* 地址插件 */
+.picker-list .am-list-item .am-list-line .am-list-extra {
+    flex-basis: initial;
+  }
+  
+  .test {
+    position: relative;
+    border-bottom: 0;
+  }
+  
+  .test:after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1PX;
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
   }

@@ -50,29 +50,29 @@ export default class Detailed extends Component {
                 </div>
             </div>
             <div className="detaContext">
-                <div className="dis-title">景点简介<span> ------------------------------</span> <i class="fa fa-hand-o-down" aria-hidden="true"></i></div>
+                <div className="dis-title">景点简介</div>
                 <div className="dis-context">
                     专门为你定制的旅游目的地 专门为你定制的旅游目的地
                     专门为你定制的旅游目的地 专门为你定制的旅游目的地
                     专门为你定制的旅游目的地 专门为你定制的旅游目的地
                 </div>
             </div>
-            <div className="small-cut-off"></div>
+            <div className="big-cut-off"></div>
             <div className="detaContext">
-                <div className="dis-title">景点地址<span> ------------------------------</span> <i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                <div className="dis-title">景点地址</div>
                 <div className="dis-context">
                     马尔代夫共和国-马尔代夫地处南亚
                 </div>
             </div>
-            <div className="small-cut-off"></div>
+            <div className="big-cut-off"></div>
             <div className="detaContext">
-                <div className="dis-title">景点攻略<span> ------------------------------</span>  <i class="fa fa-cc-discover" aria-hidden="true"></i></div>
+                <div className="dis-title">景点攻略 </div>
                 <div className="dis-context">
                    
                     专门为你定制的旅游目的地 专门为你定制的旅游目的地
                 </div>
             </div>
-            <div className="small-cut-off"></div>
+            <div className="big-cut-off"></div>
     
             <div className="detaContext">
                 <div className="dis-title">景点评价</div>

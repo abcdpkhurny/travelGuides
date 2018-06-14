@@ -69,11 +69,12 @@ export default class personal extends Component {
                         <div className="contentImg"><img src="static/images/tourism/01.jpg"/></div>
                         <div className="contentUserName">
                             <div className="userName">Man哈哈哈 &nbsp;<span className="color-son"><i className="fa fa-venus" aria-hidden="true"></i></span> </div>
-                            <div className="userNum"><span className="userNumW">0关注</span><span>0粉丝</span></div>
+                            <div className="userNum"><span className="userNumW">0收藏</span><span>0发布</span></div>
                         </div>
                         <div className="content-rightimg"><i className="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
                     </div>
                 </Link>
+                {/* 没登录之前 */}
                 {/* <Link to="/Login">
                     <div className="contentTop">
                        <div className="contentLogin"> 登录/注册</div>
@@ -81,15 +82,36 @@ export default class personal extends Component {
                 </Link> */}
                 <div className="small-cut-off"></div>
                 <div className="contentNumDer">
-                    <div><p>落网天数</p><p>0</p></div>
-                    <div><p>累计播放</p><p>0</p></div>
-                    <div><p>可缓存数</p><p>0</p></div>
-                    <a href=""><div className="clock">打卡</div></a>
+                    <div><p>收藏景点</p><p>0</p></div>
+                    <div><p>发布景点</p><p>0</p></div>
+                    <div><p>发布标题</p><p>0</p></div>
+                    <a href=""><div className="clock">签到</div></a>
                 </div>
                 <div className="big-cut-off"></div>
                 <Link to="/Collect">
                     <div className="myNews">
                         <div className="myTitle"><i class="fa fa-star-o fa-1x" aria-hidden="true"></i> 我的收藏</div>
+                        <div className="content-rightimg"><i className="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
+                    </div>
+                </Link>
+                <div className="big-cut-off"></div>
+                <Link to="/establishScenery">
+                    <div className="myNews">
+                        <div className="myTitle"><i class="fa fa-pencil" aria-hidden="true"></i> 创建景点</div>
+                        <div className="content-rightimg"><i className="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
+                    </div>
+                </Link>
+                <div className="big-cut-off"></div>
+                <Link to="/Collect">
+                    <div className="myNews">
+                        <div className="myTitle"><i class="fa fa-refresh" aria-hidden="true"></i> 审核标题</div>
+                        <div className="content-rightimg"><i className="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
+                    </div>
+                </Link>
+                <div className="big-cut-off"></div>
+                <Link to="/Collect">
+                    <div className="myNews">
+                        <div className="myTitle"><i class="fa fa-refresh" aria-hidden="true"></i> 审核景点</div>
                         <div className="content-rightimg"><i className="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
                     </div>
                 </Link>

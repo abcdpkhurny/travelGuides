@@ -45,7 +45,7 @@ export default class ForumList extends Component {
     render() {
         return (
             <div className="forumList">
-            <div className="header-per">
+                <div className="header-per">
                     <div className="headerTop">
                         <div className="headerla"> <Link to="/Community"><i className="fa fa-angle-left fa-lg" aria-hidden="true"></i></Link></div>
                         <div className="headerTitle">综合讨论</div>

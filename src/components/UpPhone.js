@@ -19,8 +19,9 @@ export default class UpPhone extends Component {
                         新号： &nbsp;
                         <input type="text" value="18777777777"/>
                     </div>
-                    <div className="small-cut-off"></div>
+                    <div className="big-cut-off"></div>
                     <div><input type="submit" value="保存" className="loginButton" id="loginButton"/></div>
+                    
                 </div>
                 </form>
             </div>
