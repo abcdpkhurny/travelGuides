@@ -124,6 +124,7 @@ class Community extends Component {
                     }}
                 />
               </div>
+              <div className="big-cut-off"></div>
             </div>
         )
     }

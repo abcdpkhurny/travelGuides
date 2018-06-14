@@ -87,6 +87,7 @@ export default class FindScenery extends Component {
                 }}
             />
             </div>
+            <div className="big-cut-off"></div>
         </div>
     </div>
     );
